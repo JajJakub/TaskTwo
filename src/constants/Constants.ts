@@ -1,4 +1,6 @@
-export const Category = {
+import { Product } from "../types/Product.ts";
+
+export const NewsCategory = {
   All: "all",
   Business: "business",
   Entertainment: "entertainment",
@@ -9,13 +11,75 @@ export const Category = {
   Technology: "technology",
 } as const;
 
-export const CategoryLabels = {
-  [Category.All]: "All",
-  [Category.Business]: "Business",
-  [Category.Entertainment]: "Entertainment",
-  [Category.General]: "General",
-  [Category.Health]: "Health",
-  [Category.Science]: "Science",
-  [Category.Sports]: "Sports",
-  [Category.Technology]: "Technology",
+export const NewsCategoryLabels = {
+  [NewsCategory.All]: "All",
+  [NewsCategory.Business]: "Business",
+  [NewsCategory.Entertainment]: "Entertainment",
+  [NewsCategory.General]: "General",
+  [NewsCategory.Health]: "Health",
+  [NewsCategory.Science]: "Science",
+  [NewsCategory.Sports]: "Sports",
+  [NewsCategory.Technology]: "Technology",
+} as const;
+
+export const ProductCategory = {
+  All: "all",
+  Smartphones: "smartphones",
+  Laptops: "laptops",
+  Fragrances: "fragrances",
+  Skincare: "skincare",
+  Groceries: "groceries",
+  HomeDecoration: "home-decoration",
+  Furniture: "furniture",
+  Tops: "tops",
+  WomensDresses: "womens-dresses",
+  WomensShoes: "womens-shoes",
+  MensShirts: "mens-shirts",
+  MensShoes: "mens-shoes",
+  MensWatches: "mens-watches",
+  WomensWatches: "womens-watches",
+  WomensBags: "womens-bags",
+  WomensJewellery: "womens-jewellery",
+  Sunglasses: "sunglasses",
+  Automotive: "automotive",
+  Motorcycle: "motorcycle",
+  Lighting: "lighting",
+} as const;
+
+export const ProductCategoryLabel = {
+  [ProductCategory.All]: "All",
+  [ProductCategory.Smartphones]: "Smartphones",
+  [ProductCategory.Laptops]: "Laptops",
+  [ProductCategory.Fragrances]: "Fragrances",
+  [ProductCategory.Skincare]: "Skincare",
+  [ProductCategory.Groceries]: "Groceries",
+  [ProductCategory.HomeDecoration]: "Home Decoration",
+  [ProductCategory.Furniture]: "Furniture",
+  [ProductCategory.Tops]: "Tops",
+  [ProductCategory.WomensDresses]: "Women's Dresses",
+  [ProductCategory.WomensShoes]: "Women's Shoes",
+  [ProductCategory.MensShirts]: "Men's Shirts",
+  [ProductCategory.MensShoes]: "Men's Shoes",
+  [ProductCategory.MensWatches]: "Men's Watches",
+  [ProductCategory.WomensWatches]: "Women's Watches",
+  [ProductCategory.WomensBags]: "Women's Bags",
+  [ProductCategory.WomensJewellery]: "Women's Jewellery",
+  [ProductCategory.Sunglasses]: "Sunglasses",
+  [ProductCategory.Automotive]: "Automotive",
+  [ProductCategory.Motorcycle]: "Motorcycle",
+  [ProductCategory.Lighting]: "Lighting",
+} as const;
+
+export const ProductPlaceholder: Product = {
+  brand: "",
+  category: "",
+  description: "",
+  discountPercentage: 0,
+  id: 0,
+  images: [],
+  price: 0,
+  rating: 0,
+  stock: 0,
+  thumbnail: "",
+  title: "",
 } as const;

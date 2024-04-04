@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { CategoryType } from "../types/Types.ts";
+import { Category } from "../types/Types.ts";
 
 type NavigationProps = {
-  items: CategoryType[];
+  items: Category[];
   onSelectItem: (item: string) => void;
 };
 
