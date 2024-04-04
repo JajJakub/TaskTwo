@@ -1,22 +1,19 @@
 import { useState } from "react";
+import { CategoryType } from "../types/Types.ts";
 
-interface Props {
-  items: string[];
+type NavigationProps = {
+  items: CategoryType[];
   onSelectItem: (item: string) => void;
-}
+};
 
-function Navigation({ items, onSelectItem }: Props) {
+function Navigation({ items, onSelectItem }: NavigationProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   return (
-    <nav>
+    <nav className="tw-w-1/5 float-start tw-h-auto">
       <ul className="list-group">
         {items.map((item, index) => (
           <li
-            className={
-              selectedIndex === index
-                ? "list-group-item active"
-                : "list-group-item"
-            }
+            className={`list-group-item ${selectedIndex === index && "active"}`}
             key={item}
             onClick={() => {
               setSelectedIndex(index);
