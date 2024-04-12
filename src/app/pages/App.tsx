@@ -1,17 +1,19 @@
 import Navigation from "../components/Navigation.tsx";
 import { useState } from "react";
-import { ProductCategory } from "../constants/Constants.ts";
+import { ProductCategories } from "../constants/Constants.ts";
 import Header from "../components/Header.tsx";
-import { Category } from "../types/Types.ts";
+import { ProductCategoryType } from "../types/Types.ts";
 import Main from "../components/Main.tsx";
 
 function App() {
-  const categories: Category[] = Object.keys(ProductCategory) as Category[];
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const categories: ProductCategoryType[] = Object.values(ProductCategories);
+  const [selectedCategory, setSelectedCategory] = useState<ProductCategoryType>(
+    ProductCategories.All,
+  );
 
   return (
     <>
-      <Header category={selectedCategory} />
+      <Header />
       <Navigation items={categories} onSelectItem={setSelectedCategory} />
       <Main category={selectedCategory} />
     </>

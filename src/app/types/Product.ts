@@ -1,3 +1,5 @@
+"use client";
+
 export type Product = {
   id: number;
   title: string;

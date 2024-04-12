@@ -1,3 +1,5 @@
+"use client";
+
 import { Product } from "../types/Product.ts";
 
 export const NewsCategory = {
@@ -22,7 +24,7 @@ export const NewsCategoryLabels = {
   [NewsCategory.Technology]: "Technology",
 } as const;
 
-export const ProductCategory = {
+export const ProductCategories = {
   All: "all",
   Smartphones: "smartphones",
   Laptops: "laptops",
@@ -47,27 +49,27 @@ export const ProductCategory = {
 } as const;
 
 export const ProductCategoryLabel = {
-  [ProductCategory.All]: "All",
-  [ProductCategory.Smartphones]: "Smartphones",
-  [ProductCategory.Laptops]: "Laptops",
-  [ProductCategory.Fragrances]: "Fragrances",
-  [ProductCategory.Skincare]: "Skincare",
-  [ProductCategory.Groceries]: "Groceries",
-  [ProductCategory.HomeDecoration]: "Home Decoration",
-  [ProductCategory.Furniture]: "Furniture",
-  [ProductCategory.Tops]: "Tops",
-  [ProductCategory.WomensDresses]: "Women's Dresses",
-  [ProductCategory.WomensShoes]: "Women's Shoes",
-  [ProductCategory.MensShirts]: "Men's Shirts",
-  [ProductCategory.MensShoes]: "Men's Shoes",
-  [ProductCategory.MensWatches]: "Men's Watches",
-  [ProductCategory.WomensWatches]: "Women's Watches",
-  [ProductCategory.WomensBags]: "Women's Bags",
-  [ProductCategory.WomensJewellery]: "Women's Jewellery",
-  [ProductCategory.Sunglasses]: "Sunglasses",
-  [ProductCategory.Automotive]: "Automotive",
-  [ProductCategory.Motorcycle]: "Motorcycle",
-  [ProductCategory.Lighting]: "Lighting",
+  [ProductCategories.All]: "All",
+  [ProductCategories.Smartphones]: "Smartphones",
+  [ProductCategories.Laptops]: "Laptops",
+  [ProductCategories.Fragrances]: "Fragrances",
+  [ProductCategories.Skincare]: "Skincare",
+  [ProductCategories.Groceries]: "Groceries",
+  [ProductCategories.HomeDecoration]: "Home Decoration",
+  [ProductCategories.Furniture]: "Furniture",
+  [ProductCategories.Tops]: "Tops",
+  [ProductCategories.WomensDresses]: "Women's Dresses",
+  [ProductCategories.WomensShoes]: "Women's Shoes",
+  [ProductCategories.MensShirts]: "Men's Shirts",
+  [ProductCategories.MensShoes]: "Men's Shoes",
+  [ProductCategories.MensWatches]: "Men's Watches",
+  [ProductCategories.WomensWatches]: "Women's Watches",
+  [ProductCategories.WomensBags]: "Women's Bags",
+  [ProductCategories.WomensJewellery]: "Women's Jewellery",
+  [ProductCategories.Sunglasses]: "Sunglasses",
+  [ProductCategories.Automotive]: "Automotive",
+  [ProductCategories.Motorcycle]: "Motorcycle",
+  [ProductCategories.Lighting]: "Lighting",
 } as const;
 
 export const ProductPlaceholder: Product = {
@@ -83,3 +85,5 @@ export const ProductPlaceholder: Product = {
   thumbnail: "",
   title: "",
 } as const;
+
+export const API_BASE_URL = import.meta.env.VITE_BASE_URL;

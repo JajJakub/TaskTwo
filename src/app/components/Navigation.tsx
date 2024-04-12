@@ -1,9 +1,11 @@
+"use client";
+
 import { useState } from "react";
-import { Category } from "../types/Types.ts";
+import { ProductCategoryType } from "../types/Types.ts";
 
 type NavigationProps = {
-  items: Category[];
-  onSelectItem: (item: string) => void;
+  items: ProductCategoryType[];
+  onSelectItem: (item: ProductCategoryType) => void;
 };
 
 function Navigation({ items, onSelectItem }: NavigationProps) {

@@ -2,9 +2,9 @@
 export default {
   content: [
     "./index.html",
-    "./src/components/*.{ts,tsx}",
-    "./src/learning/*.{ts,tsx}",
-    "./src/*.{ts,tsx}",
+    "./src/app/components/*.{ts,tsx}",
+    "./src/app/learning/*.{ts,tsx}",
+    "./src/app/*.{ts,tsx}",
   ],
   prefix: "tw-",
   theme: {
