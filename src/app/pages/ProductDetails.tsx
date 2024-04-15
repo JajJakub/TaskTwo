@@ -4,6 +4,7 @@ import axios from "axios";
 import { API_BASE_URL, ProductPlaceholder } from "../constants/Constants.ts";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header.tsx";
+import Carousel from "../components/Carousel.tsx";
 
 function ProductDetails() {
   const params = useParams<string>();
@@ -24,23 +25,43 @@ function ProductDetails() {
   return (
     <>
       <Header />
-      <main className=" text-center tw-h-auto d-flex flex-column">
+      <main className=" text-center d-flex flex-column h-100 w-100">
         <h2 className="fs-1 lead tw-w-full">{data.title}</h2>
-        <div className="row row-cols-2 tw-mb-3 tw-w-4/5 align-self-center">
-          {data.images.map((url, index) => (
-            <img
-              className="tw-max-h-80 mx-auto"
-              src={url}
-              alt={index + ""}
-              key={index}
-            />
-          ))}
-        </div>
-        <div>
-          <p>{data.description}</p>
-          <p>{data.brand}</p>
-          <p>{data.rating}</p>
-        </div>
+        <Carousel images={data.images} />
+        <table className="table">
+          <thead>
+            <tr>
+              <th scope="col" colSpan={2}>
+                Description
+              </th>
+              <th scope="col" rowSpan={6}>
+                {data.description}
+              </th>
+            </tr>
+          </thead>
+          <tbody className="table-group-divider">
+            <tr>
+              <th scope="row">Price</th>
+              <td>{data.price}</td>
+            </tr>
+            <tr>
+              <th scope="row">Discount</th>
+              <td>{data.discountPercentage}</td>
+            </tr>
+            <tr>
+              <th scope="row">Stock</th>
+              <td>{data.stock}</td>
+            </tr>
+            <tr>
+              <th scope="row">Rating</th>
+              <td>{data.rating}</td>
+            </tr>
+            <tr>
+              <th scope="row">Brand</th>
+              <td>{data.brand}</td>
+            </tr>
+          </tbody>
+        </table>
       </main>
     </>
   );
