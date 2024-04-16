@@ -20,15 +20,15 @@ function Carousel({ images }: NavigationProps) {
   };
 
   return (
-    <div className="carousel d-flex flex-column align-self-center justify-content-center tw-h-2/3 tw-w-1/3 border py-3 ">
-      <div className="h-100 carousel-inner">
+    <div className="carousel d-flex flex-column align-self-center justify-content-center border">
+      <div className="carousel-inner d-flex align-items-center">
         {images.map((item, index) => (
           <div
-            className={`h-100 carousel-item ${index === indexOfActiveImage ? "active" : ""}`}
+            className={`carousel-item h-100 ${index === indexOfActiveImage ? "active" : ""}`}
             key={index}
           >
             <img
-              className="d-block w-100 h-100"
+              className="d-block tw-mx-auto img-fluid h-100"
               src={item}
               alt={index.toString()}
             />
@@ -40,7 +40,10 @@ function Carousel({ images }: NavigationProps) {
         type="button"
         onClick={handlePrevClick}
       >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span
+          className="carousel-control-prev-icon bg-dark"
+          aria-hidden="true"
+        ></span>
         <span className="visually-hidden">Previous</span>
       </button>
       <button
@@ -48,7 +51,10 @@ function Carousel({ images }: NavigationProps) {
         type="button"
         onClick={handleNextClick}
       >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span
+          className="carousel-control-next-icon bg-dark"
+          aria-hidden="true"
+        ></span>
         <span className="visually-hidden">Next</span>
       </button>
     </div>

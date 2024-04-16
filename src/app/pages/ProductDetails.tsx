@@ -25,44 +25,48 @@ function ProductDetails() {
   return (
     <>
       <Header />
-      <main className=" text-center d-flex flex-column h-100 w-100">
-        <h2 className="fs-1 lead tw-w-full">{data.title}</h2>
-        <Carousel images={data.images} />
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col" colSpan={2}>
-                Description
-              </th>
-              <th scope="col" rowSpan={6}>
-                {data.description}
-              </th>
-            </tr>
-          </thead>
-          <tbody className="table-group-divider">
-            <tr>
-              <th scope="row">Price</th>
-              <td>{data.price}</td>
-            </tr>
-            <tr>
-              <th scope="row">Discount</th>
-              <td>{data.discountPercentage}</td>
-            </tr>
-            <tr>
-              <th scope="row">Stock</th>
-              <td>{data.stock}</td>
-            </tr>
-            <tr>
-              <th scope="row">Rating</th>
-              <td>{data.rating}</td>
-            </tr>
-            <tr>
-              <th scope="row">Brand</th>
-              <td>{data.brand}</td>
-            </tr>
-          </tbody>
-        </table>
+      <main className="text-center d-flex w-100">
+        <section className="w-50 d-flex flex-column">
+          <h2 className="fs-1 lead">{data.title}</h2>
+          <Carousel images={data.images} />
+        </section>
+        <aside className="d-flex w-50">
+          <table className="table">
+            <thead>
+              <tr>
+                <th scope="col" colSpan={2}>
+                  Product Details
+                </th>
+              </tr>
+            </thead>
+            <tbody className="table-group-divider">
+              <tr>
+                <th scope="row">Price</th>
+                <td>{data.price}</td>
+              </tr>
+              <tr>
+                <th scope="row">Discount</th>
+                <td>{data.discountPercentage}</td>
+              </tr>
+              <tr>
+                <th scope="row">Stock</th>
+                <td>{data.stock}</td>
+              </tr>
+              <tr>
+                <th scope="row">Rating</th>
+                <td>{data.rating}</td>
+              </tr>
+              <tr>
+                <th scope="row">Brand</th>
+                <td>{data.brand}</td>
+              </tr>
+            </tbody>
+          </table>
+        </aside>
       </main>
+      <div className="d-flex w-100 text-center my-4">
+        <h2 className="fs-2 lead my-4 mx-auto">{data.description}</h2>
+      </div>
     </>
   );
 }

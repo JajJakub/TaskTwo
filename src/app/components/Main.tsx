@@ -9,24 +9,34 @@ import axios from "axios";
 
 type MainCategory = {
   category: ProductCategoryType;
+  searchString: string;
 };
 
-function Main({ category }: MainCategory) {
+function Main({ category, searchString }: MainCategory) {
   const [data, setData] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchData = () => {
-      const url =
-        `${API_BASE_URL}/products` +
-        (category === ProductCategories.All ? `/` : `/category/${category}`);
+      if (searchString === "") {
+        const url =
+          `${API_BASE_URL}/products` +
+          (category === ProductCategories.All ? `/` : `/category/${category}`);
 
-      axios.get(url).then((result) => {
-        const products: Product[] = result.data["products"];
-        setData(products);
-      });
+        axios.get(url).then((result) => {
+          const products: Product[] = result.data["products"];
+          setData(products);
+        });
+      } else {
+        axios
+          .get(`${API_BASE_URL}/products/search?q=${searchString}`)
+          .then((result) => {
+            const products: Product[] = result.data["products"];
+            setData(products);
+          });
+      }
     };
     fetchData();
-  }, [category]);
+  }, [searchString, category]);
 
   return (
     <main className="tw-w-4/5 tw-float-right tw-px-3">

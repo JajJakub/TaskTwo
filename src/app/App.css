@@ -12,3 +12,11 @@ body {
 #root {
     height: 100%;
 }
+.carousel {
+    height: 40vh;
+    width: 40vw;
+}
+
+.carousel-item img {
+    object-fit:cover;
+}

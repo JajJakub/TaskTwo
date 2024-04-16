@@ -10,12 +10,17 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState<ProductCategoryType>(
     ProductCategories.All,
   );
+  const [searchString, setSearchString] = useState<string>("");
 
   return (
     <>
       <Header />
-      <Navigation items={categories} onSelectItem={setSelectedCategory} />
-      <Main category={selectedCategory} />
+      <Navigation
+        items={categories}
+        onSelectItem={setSelectedCategory}
+        onSearch={setSearchString}
+      />
+      <Main category={selectedCategory} searchString={searchString} />
     </>
   );
 }
