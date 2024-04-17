@@ -1,18 +1,16 @@
-"use client";
-
-import { Product } from "../types/Product.ts";
-import { API_BASE_URL, ProductCategories } from "../constants/Constants.ts";
-import { Link } from "react-router-dom";
-import { ProductCategoryType } from "../types/Types.ts";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
+import { Product } from "../types/Product.ts";
+import { ProductCategoryType } from "../types/Types.ts";
+import { API_BASE_URL, ProductCategories } from "../constants/Constants.ts";
 
 type MainCategory = {
   category: ProductCategoryType;
   searchString: string;
 };
 
-function Main({ category, searchString }: MainCategory) {
+function ProductsList({ category, searchString }: MainCategory) {
   const [data, setData] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -63,4 +61,4 @@ function Main({ category, searchString }: MainCategory) {
   );
 }
 
-export default Main;
+export default ProductsList;

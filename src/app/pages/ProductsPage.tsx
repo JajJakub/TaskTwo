@@ -3,9 +3,9 @@ import { useState } from "react";
 import { ProductCategories } from "../constants/Constants.ts";
 import Header from "../components/Header.tsx";
 import { ProductCategoryType } from "../types/Types.ts";
-import Main from "../components/Main.tsx";
+import ProductsList from "../components/ProductsList.tsx";
 
-function App() {
+function ProductsPage() {
   const categories: ProductCategoryType[] = Object.values(ProductCategories);
   const [selectedCategory, setSelectedCategory] = useState<ProductCategoryType>(
     ProductCategories.All,
@@ -20,9 +20,9 @@ function App() {
         onSelectItem={setSelectedCategory}
         onSearch={setSearchString}
       />
-      <Main category={selectedCategory} searchString={searchString} />
+      <ProductsList category={selectedCategory} searchString={searchString} />
     </>
   );
 }
 
-export default App;
+export default ProductsPage;

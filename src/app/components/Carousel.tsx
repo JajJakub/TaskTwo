@@ -20,7 +20,7 @@ function Carousel({ images }: NavigationProps) {
   };
 
   return (
-    <div className="carousel d-flex flex-column align-self-center justify-content-center border">
+    <div className="carousel d-flex flex-column align-self-center justify-content-center border tw-w-2/4">
       <div className="carousel-inner d-flex align-items-center">
         {images.map((item, index) => (
           <div

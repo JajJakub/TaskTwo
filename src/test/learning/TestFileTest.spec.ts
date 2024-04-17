@@ -1,4 +1,4 @@
-import { sumOfTwoNumbers } from "../../../app/client/learning/TestFile.ts";
+import { sumOfTwoNumbers } from "../../app/learning/TestFile.ts";
 
 describe("TestFile test suite", () => {
   it("should return sum of 1 and 4", () => {

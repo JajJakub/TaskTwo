@@ -30,7 +30,7 @@ function ProductDetails() {
           <h2 className="fs-1 lead">{data.title}</h2>
           <Carousel images={data.images} />
         </section>
-        <aside className="d-flex w-50">
+        <section className="d-flex w-50">
           <table className="table">
             <thead>
               <tr>
@@ -62,11 +62,11 @@ function ProductDetails() {
               </tr>
             </tbody>
           </table>
-        </aside>
+        </section>
       </main>
-      <div className="d-flex w-100 text-center my-4">
+      <aside className="d-flex w-100 text-center my-4">
         <h2 className="fs-2 lead my-4 mx-auto">{data.description}</h2>
-      </div>
+      </aside>
     </>
   );
 }

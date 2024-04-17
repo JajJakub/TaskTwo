@@ -16,7 +16,3 @@ body {
     height: 40vh;
     width: 40vw;
 }
-
-.carousel-item img {
-    object-fit:cover;
-}
